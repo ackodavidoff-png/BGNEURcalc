@@ -119,7 +119,7 @@
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Name = "Form1";
-            Text = "Валутен калкулатор версия 1.0.А";
+            Text = "Валутен калкулатор версия 1.0.Б";
             ResumeLayout(false);
             PerformLayout();
         }

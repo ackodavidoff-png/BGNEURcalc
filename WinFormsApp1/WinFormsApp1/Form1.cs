@@ -17,9 +17,9 @@ namespace WinFormsApp1
             {
                 if (radioButton1.Checked)
                 {
-                    if (amount >= 2000)
+                    if (amount >= 10000)
                     {
-                        MessageBox.Show($"Има лимит за превалутиране.Трябва да декларирате парите,които имате: {amount:F2} Лева", "Предупреждение");
+                        MessageBox.Show($"Трябва да декларирате произхода на  парите,които искате да обмените в БНБ: {amount:F2} Лева в {(amount / course):F2} евро", "Предупреждение");
                     }
                     result = amount / course;
                     label2.Text = $"{amount:F2} BGN = {result:F2} EUR";
