@@ -5,14 +5,15 @@ namespace WinFormsApp1
         public Form1()
         {
             InitializeComponent();
+            label3.Text = $"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}";
+            timer1.Start();
         }
-
+        //1 EUR = 1.95583 BGN
+        double course = 1.95583;
+        double amount;
+        double result;
         private void button1_Click(object sender, EventArgs e)
         {
-            //1 EUR = 1.95583 BGN
-            double course = 1.95583;
-            double amount;
-            double result;
             if (double.TryParse(textBox1.Text, out amount))
             {
                 if (radioButton1.Checked)
@@ -51,6 +52,35 @@ namespace WinFormsApp1
             {
                 label2.Text = "0.00 EUR = 0.00 BGN";
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label3.Text = $"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Clipboard.SetText(label2.Text);
+            if (radioButton1.Checked)
+            {
+                Clipboard.SetText($"{amount:F2} BGN / {result:F2} EUR");
+            }
+            else if (radioButton2.Checked)
+            {
+                Clipboard.SetText($"{amount:F2} EUR / {result:F2} BGN");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //Clipboard.GetText();
+            textBox1.Paste();
         }
     }
 }
