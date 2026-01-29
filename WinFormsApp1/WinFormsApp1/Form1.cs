@@ -82,5 +82,98 @@ namespace WinFormsApp1
             //Clipboard.GetText();
             textBox1.Paste();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            double n1;
+            double n2;
+            double result;
+            if (double.TryParse(textBox2.Text, out n1) && double.TryParse(textBox3.Text, out n2))
+            {
+                result = n1 + n2;
+                label6.Text = $"Резултат: {result:F5}";
+            }
+            else
+            {
+                MessageBox.Show("Невалидни данни за вход!Моля опитайте отново.");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                label6.Text = "Резултат:";
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            double n1;
+            double n2;
+            double result;
+            if (double.TryParse(textBox2.Text, out n1) && double.TryParse(textBox3.Text, out n2))
+            {
+                result = n1 - n2;
+                label6.Text = $"Резултат: {result:F5}";
+            }
+            else
+            {
+                MessageBox.Show("Невалидни данни за вход!Моля опитайте отново.");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                label6.Text = "Резултат:";
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            double n1;
+            double n2;
+            double result;
+            if (double.TryParse(textBox2.Text, out n1) && double.TryParse(textBox3.Text, out n2))
+            {
+                result = n1 * n2;
+                label6.Text = $"Резултат: {result:F5}";
+            }
+            else
+            {
+                MessageBox.Show("Невалидни данни за вход!Моля опитайте отново.");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                label6.Text = "Резултат:";
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            double n1;
+            double n2;
+            double result;
+            if (double.TryParse(textBox2.Text, out n1) && double.TryParse(textBox3.Text, out n2))
+            {
+                if (n2 == 0)
+                {
+                    MessageBox.Show("Делението на 0 НЕ е възможно");
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    label6.Text = "Резултат:";
+                }
+                else
+                {
+                    result = n1 / n2;
+                    label6.Text = $"Резултат: {result:F5}";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Невалидни данни за вход!Моля опитайте отново.");
+                textBox2.Text = "";
+                textBox3.Text = "";
+                label6.Text = "Резултат:";
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            textBox3.Text = "";
+            label6.Text = "Резултат:";
+        }
     }
 }
